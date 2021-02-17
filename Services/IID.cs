@@ -22,8 +22,8 @@ namespace Ingrs.Services
     {
       __argon2Prms = new Argon2Parameter()
         {
-          Parallelism = 1,
-          MemorySize1Kb = 1024 * 512,
+          Parallelism = 4,
+          MemorySize1Kb = 1024 * 128,
           Iterations = 2,
           ByteCount = 128,
           Salt = null,
