@@ -38,7 +38,7 @@ CREATE TABLE `Op` (
        `TIID` VARCHAR(512) NOT NULL,
        `RandNum` BIGINT UNSIGNED NOT NULL,
 
-       `GenerateTs` BIGINT UNSIGNED DEFAULT 0,
+       `GenerateTs` BIGINT UNSIGNED NOT NULL DEFAULT 0,
        -- User register, verify credential, update credentials, etc...
        `Type` TINYINT UNSIGNED,
 

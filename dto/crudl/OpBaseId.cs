@@ -10,7 +10,7 @@ namespace Ingrs.Dto
     {
 
         public uint DomainId { get; set; }
-        public ulong? GenerateTs { get; set; }
+        public ulong GenerateTs { get; set; }
         public ulong RandNum { get; set; }
         public string Tiid { get; set; }
         public byte? Type { get; set; }

@@ -76,9 +76,7 @@ namespace Ingrs.Access
 
                 entity.Property(e => e.DomainId).HasColumnType("int(10) unsigned");
 
-                entity.Property(e => e.GenerateTs)
-                    .HasColumnType("bigint(20) unsigned")
-                    .HasDefaultValueSql("'0'");
+                entity.Property(e => e.GenerateTs).HasColumnType("bigint(20) unsigned");
 
                 entity.Property(e => e.RandNum).HasColumnType("bigint(20) unsigned");
 

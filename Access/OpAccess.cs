@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Cryptool;
 
-using Ingrs.Services;
+using Ingrs.Dto;
 
 namespace Ingrs.Access
 {
@@ -19,10 +19,11 @@ namespace Ingrs.Access
     /// </summary>
     /// <param name="opTIID"></param>
     /// <returns></returns>
-    public static async Task<Op>
+    public static async Task<OpId>
     GetByTIID(string opTIID)
     {
-      return await EFCtx.Ingrs.Ops.FirstOrDefaultAsync(o => o.Tiid == opTIID);
+      Op op = await EFCtx.Ingrs.Ops.FirstOrDefaultAsync(o => o.Tiid == opTIID);
+      return new OpId(op);
     }
   }
 }

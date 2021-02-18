@@ -10,7 +10,7 @@ namespace Ingrs.Access
         public uint Id { get; set; }
         public string Tiid { get; set; }
         public ulong RandNum { get; set; }
-        public ulong? GenerateTs { get; set; }
+        public ulong GenerateTs { get; set; }
         public byte? Type { get; set; }
         public uint DomainId { get; set; }
     }
