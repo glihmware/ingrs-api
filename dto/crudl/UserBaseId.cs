@@ -10,11 +10,12 @@ namespace Ingrs.Dto
     {
 
         public string Argon22 { get; set; }
+        public string Argon2Ud { get; set; }
         public uint DomainId { get; set; }
-        public uint? FailAttempts { get; set; }
+        public uint FailAttempts { get; set; }
         public string Iid { get; set; }
-        public ulong? LastSuccessCon { get; set; }
-        public ulong? RegisterTs { get; set; }
+        public ulong LastSuccessCon { get; set; }
+        public ulong RegisterTs { get; set; }
         public string Salt { get; set; }
 
         public UserBase()
@@ -33,6 +34,7 @@ namespace Ingrs.Dto
             {
 
                 Argon22 = this.Argon22,
+                Argon2Ud = this.Argon2Ud,
                 DomainId = this.DomainId,
                 FailAttempts = this.FailAttempts,
                 Iid = this.Iid,
@@ -46,6 +48,7 @@ namespace Ingrs.Dto
         {
 
             this.Argon22 = e.Argon22;
+            this.Argon2Ud = e.Argon2Ud;
             this.DomainId = e.DomainId;
             this.FailAttempts = e.FailAttempts;
             this.Iid = e.Iid;

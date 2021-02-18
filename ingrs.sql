@@ -63,14 +63,16 @@ CREATE TABLE `User` (
        -- Unique ingrs identifier given to the domain to identify the user.
        `IID` VARCHAR(512) NOT NULL,
 
+       -- Argon2 of Username and domain iid, to get public user info like salt.
+       `Argon2UD` VARCHAR(512) NOT NULL,
        -- Random salt associated to the user credentials.
        `Salt` VARCHAR(512) NOT NULL,
        -- The argon2 hash of the Argon2(Username | Passwd | DomainIID) coming from front-end.
        `Argon22` VARCHAR(512) NOT NULL UNIQUE,
 
-       `RegisterTs` BIGINT UNSIGNED DEFAULT 0,
-       `FailAttempts` INT UNSIGNED DEFAULT 0,
-       `LastSuccessCon` BIGINT UNSIGNED DEFAULT 0,
+       `RegisterTs` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+       `FailAttempts` INT UNSIGNED NOT NULL DEFAULT 0,
+       `LastSuccessCon` BIGINT UNSIGNED NOT NULL DEFAULT 0,
 
        `DomainId` INT UNSIGNED NOT NULL
 

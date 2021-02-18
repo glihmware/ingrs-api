@@ -88,7 +88,7 @@ namespace Ingrs.Access
         return IngrsReason.EcdsaPubInvalid;
       }
 
-      // Should also check the keys...?
+      // Should also check the keys unicity...?
       if (await EFCtx.Ingrs.Domains.AnyAsync(d => d.Name == name))
       {
         return IngrsReason.DomainNameAlreadyExists;
@@ -114,7 +114,7 @@ namespace Ingrs.Access
       switch (r)
       {
         case ReasonCRUDL.DUPLICATE:
-          // should go back to generate?
+          // should go back to generate? should not happen if keys are not unique.
           throw new Exception("TO CHECK!");
 
         case ReasonCRUDL.CREATE:

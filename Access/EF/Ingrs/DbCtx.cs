@@ -107,11 +107,16 @@ namespace Ingrs.Access
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_unicode_ci");
 
+                entity.Property(e => e.Argon2Ud)
+                    .IsRequired()
+                    .HasColumnType("varchar(512)")
+                    .HasColumnName("Argon2UD")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_unicode_ci");
+
                 entity.Property(e => e.DomainId).HasColumnType("int(10) unsigned");
 
-                entity.Property(e => e.FailAttempts)
-                    .HasColumnType("int(10) unsigned")
-                    .HasDefaultValueSql("'0'");
+                entity.Property(e => e.FailAttempts).HasColumnType("int(10) unsigned");
 
                 entity.Property(e => e.Iid)
                     .IsRequired()
@@ -120,13 +125,9 @@ namespace Ingrs.Access
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_unicode_ci");
 
-                entity.Property(e => e.LastSuccessCon)
-                    .HasColumnType("bigint(20) unsigned")
-                    .HasDefaultValueSql("'0'");
+                entity.Property(e => e.LastSuccessCon).HasColumnType("bigint(20) unsigned");
 
-                entity.Property(e => e.RegisterTs)
-                    .HasColumnType("bigint(20) unsigned")
-                    .HasDefaultValueSql("'0'");
+                entity.Property(e => e.RegisterTs).HasColumnType("bigint(20) unsigned");
 
                 entity.Property(e => e.Salt)
                     .IsRequired()
